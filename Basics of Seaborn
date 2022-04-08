@@ -1,0 +1,20 @@
+%matplotlib inline
+
+import pandas as pd
+df= pd.read_csv("http://media.sundog-soft.com/SelfDriving/FuelEfficiency.csv")
+
+df.head(10)
+
+import seaborn as sns
+sns.set()
+
+sns.scatterplot(x = '# Gears', y = 'CombMPG', data = df)
+
+sns.lmplot(x = '# Gears', y = 'CombMPG', data = df)
+
+sns.jointplot(x = '# Gears', y = 'CombMPG', data= df)
+
+#sns.set(rc={'figure.figsize':(15,5)})
+sns.boxplot(x = '# Gears', y = 'CombMPG', data= df)
+
+sns.swarmplot(x = '# Gears', y = 'CombMPG', data= df)
