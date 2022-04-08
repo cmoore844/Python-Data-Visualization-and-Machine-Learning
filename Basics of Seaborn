@@ -1,11 +1,17 @@
 %matplotlib inline
 
+#Seaborn is built off of matplotlib and pandas
 import pandas as pd
+
+#Read in the file we are pulling data from
 df= pd.read_csv("http://media.sundog-soft.com/SelfDriving/FuelEfficiency.csv")
 
+#I used df.head to see the first few rows of data
 df.head(10)
 
+#import seaborn to make it easier to create visualizations
 import seaborn as sns
+#setting seaborn as the default visualization tool
 sns.set()
 
 sns.scatterplot(x = '# Gears', y = 'CombMPG', data = df)
@@ -14,7 +20,9 @@ sns.lmplot(x = '# Gears', y = 'CombMPG', data = df)
 
 sns.jointplot(x = '# Gears', y = 'CombMPG', data= df)
 
+#can be used to adjust the size of the map/visual
 #sns.set(rc={'figure.figsize':(15,5)})
+
 sns.boxplot(x = '# Gears', y = 'CombMPG', data= df)
 
 sns.swarmplot(x = '# Gears', y = 'CombMPG', data= df)
